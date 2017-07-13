@@ -5,4 +5,24 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+
+    <string name="toolbar_title">맛집리스트</string>
+    <string name="sort_distance">거리순</string>
+    <string name="sort_rank">인기순</string>
+    <string name="sort_time">최근순</string>
+
+    <!--dummy items-->
+    <string name="dummy_item1_name">해우소</string>
+    <string name="dummy_item1_content">꿀막거리가 인기메뉴고 맛있는 음식을 저렴하게 즐길 수 있는 해우소입니다.</string>
+    <string name="dummy_item2_name">삼교리동치미막국수</string>
+    <string name="dummy_item2_content">막국수를 비빔으로 먹을지 물로 먹을지 고객이 만들어 먹는 삼교리동치미막국수입니다.</string>
+    <string name="dummy_item3_name">H스퀘어 맑은날</string>
+    <string name="dummy_item3_content">햇살이 좋은 날의 H스퀘어 광장 모습입니다.</string>
+    <string name="dummy_item4_name">H스퀘어 흐린날</string>
+    <string name="dummy_item4_content">꿀구름이 많은 날의 H스퀘어 광장 모습입니다.</string>
+
+    <string name="label_distance">거리 :\u0020</string>
+    <string name="label_rank">인기 :\u0020</string>
+    <string name="label_time">등록 시간 :\u0020</string>
 </resources>
