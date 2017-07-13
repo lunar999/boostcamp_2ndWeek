@@ -1,7 +1,25 @@
 # 안드로이드 미니프로젝트 2
 
+<br>
+<p align="center">
+  <img src="img/1.png">
+  <img src="img/2.png">
+  <br>
+  <b>[실행 화면]</b>
+</p>
+<br>
+
 ## 1. 개요
 맛집 리스트를 Grid형식과 Linear 형식으로 보여주고 거리순, 인기순, 최신순으로 정렬하는 기능을 포함하는 미니프로젝트<br><br>
+
+<br>
+<p align="center">
+  <img src="img/3.png">
+  <img src="img/4.png">
+  <br>
+  <b>[이미지 클릭]</b>
+</p>
+<br>
 
 ## 2. 설명
 * 거리순, 인기순, 최신순 탭을 클릭하면 아이템이 정렬됩니다.
