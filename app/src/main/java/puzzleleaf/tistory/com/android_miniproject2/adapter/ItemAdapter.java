@@ -45,9 +45,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     }
 
     private void itemBindInit(final ViewHolder holder, final int position) {
-        Glide.with(mInflater.getContext()).load(obj.get(position).getRes()).into(holder.myImage);
+        //Glide.with(mInflater.getContext()).load(obj.get(position).getRes()).into(holder.myImage);
         //Glide 사용시 이미지가 가끔 누락되는 문제가 발생
-        //holder.myImage.setImageResource(obj.get(position).getRes());
+        holder.myImage.setImageResource(obj.get(position).getRes());
         holder.myPrice.setText(obj.get(position).getContents());
         holder.myTitle.setText(obj.get(position).getTitle());
         holder.myCheck.setOnClickListener(new View.OnClickListener() {
