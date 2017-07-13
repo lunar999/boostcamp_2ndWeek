@@ -1,6 +1,5 @@
 package puzzleleaf.tistory.com.android_miniproject2;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
@@ -24,6 +23,7 @@ public class PanoramaDialog extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dialog_item);
+        overridePendingTransition(0,0); //시작 애니메이션 x
         ButterKnife.bind(this);
         panoramaInit(getIntent().getIntExtra("res",0));
     }
