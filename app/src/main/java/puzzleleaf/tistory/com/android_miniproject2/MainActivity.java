@@ -64,15 +64,12 @@ public class MainActivity extends AppCompatActivity{
     StaggeredGridLayoutManager staggeredGridLayoutManager;
     ItemAdapter itemAdapter;
 
-    //Glide
-    public static RequestManager mGlideRequestManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        mGlideRequestManager = Glide.with(this);
 
         drawerToolbarInit();
         dataInit();

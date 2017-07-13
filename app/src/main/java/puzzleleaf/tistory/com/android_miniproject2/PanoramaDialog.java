@@ -1,9 +1,11 @@
 package puzzleleaf.tistory.com.android_miniproject2;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.gjiazhe.panoramaimageview.GyroscopeObserver;
 import com.gjiazhe.panoramaimageview.PanoramaImageView;
 
@@ -33,6 +35,7 @@ public class PanoramaDialog extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"이미지 로딩 오류",Toast.LENGTH_SHORT).show();
             return;
         }
+       // Glide.with(getApplicationContext()).load(res).into(panoramaImageView); 왜 Glide 적용이 안될까요??
         panoramaImageView.setImageResource(res);
         panoramaImageView.setGyroscopeObserver(gyroscopeObserver);
     }
@@ -45,7 +48,7 @@ public class PanoramaDialog extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        overridePendingTransition(0,0);
+        overridePendingTransition(0,0); //종료 애니메이션 x
     }
 
     @Override

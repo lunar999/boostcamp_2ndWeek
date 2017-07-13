@@ -10,12 +10,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.flaviofaria.kenburnsview.KenBurnsView;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import puzzleleaf.tistory.com.android_miniproject2.MainActivity;
 import puzzleleaf.tistory.com.android_miniproject2.PanoramaDialog;
 import puzzleleaf.tistory.com.android_miniproject2.R;
 import puzzleleaf.tistory.com.android_miniproject2.object.ItemObject;
@@ -45,7 +45,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     }
 
     private void itemBindInit(final ViewHolder holder, final int position) {
-     //   MainActivity.mGlideRequestManager.load(obj.get(position).getRes()).into(holder.myImage);
+        //Glide.with(mInflater.getContext()).load(obj.get(position).getRes()).into(holder.myImage);
         holder.myImage.setImageResource(obj.get(position).getRes());
         holder.myPrice.setText(obj.get(position).getContents());
         holder.myTitle.setText(obj.get(position).getTitle());
@@ -100,7 +100,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.cardImageView) ImageView myImage;
+        @BindView(R.id.cardImageView) KenBurnsView myImage;
         @BindView(R.id.cardTextView) TextView myPrice;
         @BindView(R.id.cardTextTitle) TextView myTitle;
         @BindView(R.id.cardCheckImage) ImageView myCheck;
