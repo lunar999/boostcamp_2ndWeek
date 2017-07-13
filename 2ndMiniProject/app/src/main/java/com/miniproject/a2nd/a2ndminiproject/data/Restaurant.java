@@ -13,16 +13,16 @@ public class Restaurant {
     private int imageId;        // 이미지 resource id
     private boolean checked;    // 체크박스 체크여부
     private int distance;       // 거리
-    private int rank;           // 인기
+    private int popularity;     // 인기
     private Date time;          // 작성시간
 
-    public Restaurant(String name, String content, int imageId, boolean checked, int distance, int rank, Date time) {
+    public Restaurant(String name, String content, int imageId, boolean checked, int distance, int popularity, Date time) {
         this.name = name;
         this.content = content;
         this.imageId = imageId;
         this.checked = checked;
         this.distance = distance;
-        this.rank = rank;
+        this.popularity = popularity;
         this.time = time;
     }
 
@@ -50,8 +50,8 @@ public class Restaurant {
         return distance;
     }
 
-    public int getRank() {
-        return rank;
+    public int getPopularity() {
+        return popularity;
     }
 
     public Date getTime() {

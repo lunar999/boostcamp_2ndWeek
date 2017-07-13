@@ -1,5 +1,6 @@
 package com.miniproject.a2nd.a2ndminiproject;
 
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -7,7 +8,6 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
@@ -25,18 +25,23 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, TabLayout.OnTabSelectedListener {
+
+    // RecyclerView Layout 설정
+    private static final int LAYOUT_LINEAR      = 1;
+    private static final int LAYOUT_STAGE       = 2;
 
 
-    @BindView(R.id.drawer_layout)
-    DrawerLayout mDrawer;
-    @BindView(R.id.sort_tab)
-    TabLayout mSortTabs;
-    @BindView(R.id.restaurant_list)
-    RecyclerView mRestaurantViews;
+    @BindView(R.id.drawer_layout) DrawerLayout mDrawer;
+    @BindView(R.id.sort_tab) TabLayout mSortTabs;
+    @BindView(R.id.bt_view_change) ImageButton mLayoutChangeView;
+    @BindView(R.id.restaurant_list) RecyclerView mRestaurantViews;
 
+
+    // For RecyclerView
     private RestaurantAdapter mRestaurantAdapter;
     private ArrayList<Restaurant> mRestaurants;
+    private StaggeredGridLayoutManager mGridLayoutManager;
 
 
     @Override
@@ -49,6 +54,7 @@ public class MainActivity extends AppCompatActivity
         initContents();
     }
 
+    // AppBar - NavigationView 설정
     private void initNavigationView() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -60,76 +66,59 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        mSortTabs.addOnTabSelectedListener(this);
     }
 
+    // Contents 설정
     private void initContents() {
-        // TabLayout Listener 적용
-        mSortTabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                Collections.sort(mRestaurants, SortComparators.getSortComparator(tab.getPosition()));
-                mRestaurantAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
-
         // mRestaurants 데이터 생성
-        mRestaurants = makeDummyDate();
+        mRestaurants = makeDummyData();
         Collections.sort(mRestaurants, SortComparators.getSortComparator(SortComparators.SORT_DISTANCE));
 
         // RecyclerView 설정
         mRestaurantAdapter = new RestaurantAdapter(this, mRestaurants);
         mRestaurantViews.setHasFixedSize(true);
-        mRestaurantViews.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+        mGridLayoutManager = new StaggeredGridLayoutManager(LAYOUT_STAGE, StaggeredGridLayoutManager.VERTICAL);
+        mRestaurantViews.setLayoutManager(mGridLayoutManager);
         mRestaurantViews.setAdapter(mRestaurantAdapter);
     }
 
 
 
     // 임시 데이터 생성
-    private ArrayList<Restaurant> makeDummyDate() {
-        // new Restaurant(이름, 내용, 이미지Id, 체크여부, 거리, 인기, 작성시간)
+    private ArrayList<Restaurant> makeDummyData() {
+        String[] names = getResources().getStringArray(R.array.restaurant_names);
+        String[] contents = getResources().getStringArray(R.array.restaurant_contents);
+        TypedArray imageIds = getResources().obtainTypedArray(R.array.restaurant_images);
+        int[] distances = getResources().getIntArray(R.array.restaurant_distances);
+        int[] populars = getResources().getIntArray(R.array.restaurant_populars);
+
         ArrayList<Restaurant> dummyDatas = new ArrayList<>();
         Calendar calendar= Calendar.getInstance();
-        dummyDatas.add(new Restaurant(getString(R.string.dummy_item1_name), getString(R.string.dummy_item1_content),
-                R.drawable.img_boost, false, 10, 8, calendar.getTime()));
-        calendar.add(Calendar.DATE, -1);
-        dummyDatas.add(new Restaurant(getString(R.string.dummy_item2_name), getString(R.string.dummy_item2_content),
-                R.drawable.img_noodle, false, 3, 2, calendar.getTime()));
-        calendar.add(Calendar.DATE, -1);
-        dummyDatas.add(new Restaurant(getString(R.string.dummy_item3_name), getString(R.string.dummy_item3_content),
-                R.drawable.img_square_sun, false, 30, 10, calendar.getTime()));
-        calendar.add(Calendar.DATE, -1);
-        dummyDatas.add(new Restaurant(getString(R.string.dummy_item4_name), getString(R.string.dummy_item4_content),
-                R.drawable.img_square_cloud, false, 25, 5, calendar.getTime()));
-        calendar.add(Calendar.DATE, -1);
+        for(int i=0; i<names.length; i++) {
+            // new Restaurant(이름, 내용, 이미지Id, 체크여부, 거리, 인기, 작성시간)
+            dummyDatas.add(new Restaurant(names[i], contents[i], imageIds.getResourceId(i, 0), false,
+                    distances[i], populars[i], calendar.getTime()));
+            calendar.add(Calendar.DATE, -1); // 하루씩 변경
+        }
         return dummyDatas;
     }
 
 
     // RecyclerView 레이아웃 형태 변경
     @OnClick(R.id.bt_view_change)
-    void OnToggleLayoutManager(ImageButton imageButton) {
-        if(mRestaurantViews.getLayoutManager() instanceof LinearLayoutManager) {
-            mRestaurantViews.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-            imageButton.setImageResource(R.drawable.img_linear);
+    void onToggleLayoutManager() {
+        if(mGridLayoutManager.getSpanCount() == LAYOUT_LINEAR) {
+            mGridLayoutManager.setSpanCount(LAYOUT_STAGE);
+            mLayoutChangeView.setImageResource(R.drawable.img_linear);
         } else {
-            mRestaurantViews.setLayoutManager(new LinearLayoutManager(this));
-            imageButton.setImageResource(R.drawable.img_grid);
+            mGridLayoutManager.setSpanCount(LAYOUT_LINEAR);
+            mLayoutChangeView.setImageResource(R.drawable.img_grid);
         }
     }
 
 
-
+    // drawer 켜져있을 때 앱 꺼짐 방지
     @Override
     public void onBackPressed() {
         if (mDrawer.isDrawerOpen(GravityCompat.START)) {
@@ -139,26 +128,43 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+
+    // NavigationView.OnNavigationItemSelectedListener
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        switch (item.getItemId()) {
+            case R.id.nav_layout_change :
+                onToggleLayoutManager();
+                break;
+            case R.id.nav_distance :
+                mSortTabs.getTabAt(SortComparators.SORT_DISTANCE).select();
+                break;
+            case R.id.nav_popularity :
+                mSortTabs.getTabAt(SortComparators.SORT_POPULAR).select();
+                break;
+            case R.id.nav_time :
+                mSortTabs.getTabAt(SortComparators.SORT_TIME).select();
+                break;
         }
-
         mDrawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+
+    // TabLayout.OnTabSelectedListener
+    @Override
+    public void onTabSelected(TabLayout.Tab tab) {
+        Collections.sort(mRestaurants, SortComparators.getSortComparator(tab.getPosition()));
+        mRestaurantAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onTabUnselected(TabLayout.Tab tab) {
+
+    }
+
+    @Override
+    public void onTabReselected(TabLayout.Tab tab) {
+
     }
 }

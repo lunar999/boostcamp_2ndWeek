@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="restaurant_names">
+        <item>해우소</item>
+        <item>삼교리동치미막국수</item>
+        <item>H스퀘어 맑은 맛집</item>
+        <item>H스퀘어 흐린 맛집</item>
+        <item>원테이블</item>
+        <item>맥도날드</item>
+    </string-array>
+
+    <string-array name="restaurant_contents">
+        <item>꿀막거리가 인기메뉴고 맛있는 음식을 저렴하게 즐길 수 있는 해우소입니다.</item>
+        <item>막국수를 비빔으로 먹을지 물로 먹을지 고객이 만들어 먹는 삼교리동치미막국수입니다.</item>
+        <item>햇살이 좋은 날의 H스퀘어 모습입니다. 깨끗한 하늘과 눈부신 햇빛이 인상적입니다. 날씨는 덥습니다.</item>
+        <item>구름이 많은 날의 H스퀘어 모습입니다.</item>
+        <item>테이블 하나입니다.</item>
+        <item>햄버거집</item>
+    </string-array>
+
+    <array name="restaurant_images">
+        <item>@drawable/img_rest</item>
+        <item>@drawable/img_noodle</item>
+        <item>@drawable/img_square_sun</item>
+        <item>@drawable/img_square_cloud</item>
+        <item>@drawable/img_boost</item>
+        <item>@drawable/img_mcdonald</item>
+    </array>
+
+    <integer-array name="restaurant_distances">
+        <item>20</item>
+        <item>10</item>
+        <item>30</item>
+        <item>25</item>
+        <item>3</item>
+        <item>7</item>
+    </integer-array>
+
+    <integer-array name="restaurant_populars">
+        <item>6</item>
+        <item>2</item>
+        <item>9</item>
+        <item>5</item>
+        <item>10</item>
+        <item>3</item>
+    </integer-array>
+</resources>

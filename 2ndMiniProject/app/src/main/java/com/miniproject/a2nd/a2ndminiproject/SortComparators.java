@@ -11,17 +11,17 @@ import java.util.Comparator;
  */
 
 public class SortComparators {
-    public static final int SORT_DISTANCE = 0;
-    public static final int SORT_RANK = 1;
-    public static final int SORT_TIME = 2;
+    public static final int SORT_DISTANCE       = 0;    // 거리순
+    public static final int SORT_POPULAR        = 1;    // 인기순
+    public static final int SORT_TIME           = 2;    // 시간순
 
 
     public static Comparator<Restaurant> getSortComparator(int comparatorType) {
         switch (comparatorType) {
-            case SORT_DISTANCE :    return distanceComparator;
-            case SORT_RANK :        return rankComparator;
-            case SORT_TIME :        return timeComparator;
-            default:                return null;
+            case SORT_DISTANCE :        return distanceComparator;
+            case SORT_POPULAR:          return popularComparator;
+            case SORT_TIME :            return timeComparator;
+            default:                    return null;
         }
     }
 
@@ -33,10 +33,10 @@ public class SortComparators {
             return o1.getDistance() - o2.getDistance();     // 오름차순
         }
     };
-    private static Comparator<Restaurant> rankComparator = new Comparator<Restaurant>() {
+    private static Comparator<Restaurant> popularComparator = new Comparator<Restaurant>() {
         @Override
         public int compare(Restaurant o1, Restaurant o2) {
-            return o2.getRank() - o1.getRank();             // 내림차순
+            return o2.getPopularity() - o1.getPopularity(); // 내림차순
         }
     };
     private static Comparator<Restaurant> timeComparator = new Comparator<Restaurant>() {
