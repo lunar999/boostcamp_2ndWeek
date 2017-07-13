@@ -16,6 +16,7 @@ import android.widget.ImageButton;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                         Collections.sort(list, new Comparator<Item>() {
                             @Override
                             public int compare(Item o1, Item o2) {
-                                return String.valueOf(o1.getDistance()).compareTo(String.valueOf(o2.getDistance()));
+                                return Double.compare(o1.getDistance(), o2.getDistance());
                             }
                         });
                         break;
@@ -86,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                         Collections.sort(list, new Comparator<Item>() {
                             @Override
                             public int compare(Item o1, Item o2) {
-                                return String.valueOf(o2.getPopular()).compareTo(String.valueOf(o1.getPopular()));
+                                return -Double.compare(o1.getPopular(), o2.getPopular());
                             }
                         });
                         break;
@@ -94,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                         Collections.sort(list, new Comparator<Item>() {
                             @Override
                             public int compare(Item o1, Item o2) {
-                                return String.valueOf(o1.getAbstime()).compareTo(String.valueOf(o2.getAbstime()));
+                                return -Double.compare(o1.getAbstime(), o2.getAbstime());
                             }
                         });
                         break;
@@ -114,12 +115,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Item[] item = new Item[8];
-        item[0] = new Item(R.drawable.jinjin, 0.20, 20170426, 7.6, false, getResources().getString(R.string.store1_name), getResources().getString(R.string.store1_explanation));
-        item[1] = new Item(R.drawable.season, 0.75, 20170630, 7.5, false, getResources().getString(R.string.store2_name), getResources().getString(R.string.store2_explanation));
-        item[2] = new Item(R.drawable.cha_r, 0.85, 20170223, 9.2, false, getResources().getString(R.string.store3_name), getResources().getString(R.string.store3_explanation));
-        item[3] = new Item(R.drawable.shybana, 0.65, 20170519, 8.8, false, getResources().getString(R.string.store4_name), getResources().getString(R.string.store4_explanation));
-        item[4] = new Item(R.drawable.seren, 2.60, 20170704, 9.0, false, getResources().getString(R.string.store5_name), getResources().getString(R.string.store5_explanation));
-        item[5] = new Item(R.drawable.butchers, 0.70, 20170607, 8.9, false, getResources().getString(R.string.store6_name), getResources().getString(R.string.store6_explanation));
+        item[0] = new Item(R.drawable.jinjin, 0.20, new Date(117, 3, 26).getTime(), 7.6, false, getResources().getString(R.string.store1_name), getResources().getString(R.string.store1_explanation));
+        item[1] = new Item(R.drawable.season, 0.75, new Date(117, 5, 30).getTime(), 7.5, false, getResources().getString(R.string.store2_name), getResources().getString(R.string.store2_explanation));
+        item[2] = new Item(R.drawable.cha_r, 0.85, new Date(117, 1, 23).getTime(), 9.2, false, getResources().getString(R.string.store3_name), getResources().getString(R.string.store3_explanation));
+        item[3] = new Item(R.drawable.shybana, 0.65, new Date(117, 4, 19).getTime(), 8.8, false, getResources().getString(R.string.store4_name), getResources().getString(R.string.store4_explanation));
+        item[4] = new Item(R.drawable.seren, 2.60, new Date(117, 6, 4).getTime(), 9.0, false, getResources().getString(R.string.store5_name), getResources().getString(R.string.store5_explanation));
+        item[5] = new Item(R.drawable.butchers, 0.70, new Date(117, 5, 7).getTime(), 8.9, false, getResources().getString(R.string.store6_name), getResources().getString(R.string.store6_explanation));
         list.add(item[0]);
         list.add(item[1]);
         list.add(item[2]);
@@ -130,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         Collections.sort(list, new Comparator<Item>() {
             @Override
             public int compare(Item o1, Item o2) {
-                return String.valueOf(o1.getDistance()).compareTo(String.valueOf(o2.getDistance()));
+                return Double.compare(o1.getDistance(), o2.getDistance());
             }
         });
 

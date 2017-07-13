@@ -5,12 +5,13 @@ package kyi.boost2;
  */
 
 public class Item {
-    private int image, abstime;
+    private int image;
+    private long abstime;
     private double popular, distance;
     private boolean check;
     private String name, content;
 
-    public Item(int image, double distance, int abstime, double popular, boolean check, String name, String content) {
+    public Item(int image, double distance, long abstime, double popular, boolean check, String name, String content) {
         this.image = image;
         this.distance = distance;
         this.abstime = abstime;
@@ -36,11 +37,11 @@ public class Item {
         this.distance = distance;
     }
 
-    public int getAbstime() {
+    public long getAbstime() {
         return abstime;
     }
 
-    public void setAbstime(int abstime) {
+    public void setAbstime(long abstime) {
         this.abstime = abstime;
     }
 

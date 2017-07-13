@@ -35,14 +35,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         holder.name.setText(item.getName());
         holder.content.setText(item.getContent());
         holder.check.setBackgroundResource(item.isCheck() ? R.drawable.checked : R.drawable.unchecked);
-
         holder.check.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(item.isCheck())
+                if(item.isCheck()) {
                     item.setCheck(false);
-                else
+                }
+                else {
                     item.setCheck(true);
+                }
                 holder.check.setBackgroundResource(item.isCheck() ? R.drawable.checked : R.drawable.unchecked);
 
             }
