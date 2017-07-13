@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="recyclerMarginTop">3dp</dimen>
+    <dimen name="card_marginBottom">8dp</dimen>
+    <dimen name="card_marginStart">3dp</dimen>
+    <dimen name="card_marginEnd">3dp</dimen>
+    <dimen name="card_cornerRadius">10dp</dimen>
+    <dimen name="card_elevation">5dp</dimen>
+
+    <dimen name="card_imageHeight">160dp</dimen>
+
+    <dimen name="card_linearMarginStart">16dp</dimen>
+    <dimen name="card_linearMarginEnd">16dp</dimen>
+    <dimen name="card_linearMarginTop">16dp</dimen>
+
+    <dimen name="card_checkButtonMarginStart">6dp</dimen>
+    <dimen name="card_checkButtonWidth">26dp</dimen>
+    <dimen name="card_checkButtonHeight">26dp</dimen>
+
+    <dimen name="card_contentMarginBottom">16dp</dimen>
+    <dimen name="card_contentMarginEnd">16dp</dimen>
+    <dimen name="card_contentMarginStart">16dp</dimen>
+
+    <dimen name="card_nameTextSize">16sp</dimen>
+    <dimen name="card_contentTextSize">15sp</dimen>
+
+    <dimen name="main_toolbarLinearPadding">4dp</dimen>
+    <dimen name="main_toggleButtonMargin">6dp</dimen>
+</resources>
