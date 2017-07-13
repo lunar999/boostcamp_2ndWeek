@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="item_img">
+        <item>@drawable/img1</item>
+        <item>@drawable/img2</item>
+        <item>@drawable/img3</item>
+        <item>@drawable/img4</item>
+        <item>@drawable/img5</item>
+        <item>@drawable/img6</item>
+    </array>
+
+    <!-- 이름 내용 거리 인기 최신순 -->
+    <string-array name="item_menu">
+        <item>서현실비@경기도 성남시 분당구 서현동 274-4 식신로드,줄서서먹는,생생정보통,불맛,8090,조용한분위기,연중무휴@1@10@1</item>
+        <item>능라도 분당점@경기도 성남시 분당구 운중동 883-3 수요미식회,단아한,노포,미식가,피로연,담백한맛,월요일휴무@5@78@2</item>
+        <item>진진반상 분당점@경기도 성남시 분당구 삼평동 670 유스페이스 A동 지하 1층 다양한반찬,많은반찬,푸짐한밥상,상견례,가족모임,손님접대,점심@9@73@3</item>
+        <item>매그놀리아@경기도 성남시 분당구 백현동 541 현대백화점 지하1층 줄서서먹는,한가한,고급스러운,크리스마스,테이크아웃,간식,디너코스@2@71@4</item>
+        <item>양평해장국@경기도 성남시 분당구 운중동 324-12 줄서서먹는,얼큰한,다양한음식,속풀이,해장,보양식,점심@7@67@5</item>
+        <item>라디오베이@경기도 성남시 분당구 삼평동 664 여자들끼리,부담없이즐기기,낮술,아메리칸스타일,분위기좋은,홈메이드,점심@11@66@6</item>
+    </string-array>
+
+</resources>

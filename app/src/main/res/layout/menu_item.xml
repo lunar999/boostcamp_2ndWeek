@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/item_right_margin"
+    android:layout_marginRight="@dimen/item_left_margin"
+    android:layout_marginBottom="@dimen/item_bottom"
+    android:layout_marginTop="@dimen/item_top"
+    app:cardBackgroundColor="#ffffff"
+    app:cardCornerRadius="@dimen/card_radius"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cardItem"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:id="@+id/cardImageView"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/item_margin"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/item_title_size"
+                android:textStyle="bold"
+                android:id="@+id/cardTextTitle"
+                android:layout_weight="1"/>
+            <ImageView
+                android:layout_width="@dimen/icon_big_size"
+                android:layout_height="@dimen/icon_big_size"
+                android:id="@+id/cardCheckImage"
+                android:src="@drawable/ic_check_n"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/item_margin"
+            android:layout_marginRight="@dimen/item_margin"
+            android:layout_marginBottom="@dimen/item_margin"
+            android:textColor="@color/itemContentsColor"
+            android:id="@+id/cardTextView"/>
+    </LinearLayout>
+</android.support.v7.widget.CardView>
+
+
