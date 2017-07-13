@@ -190,7 +190,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             mDataset.add(info);
         }
-        // 초기 정렬 방식을 '거리순' 으로 설정 한다.
+        // 초기 정렬 방식을 '거리순'으로 설정 한다.
         Collections.sort(mDataset, new CompareShopInfo(SORT_DIST));
 
     }
