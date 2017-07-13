@@ -26,3 +26,9 @@
 * 탭 우측의 이미지를 클릭하면 아이템의 보기 형식이 달라집니다.
 * 아이템의 이미지를 클릭하면 확대해서 볼 수 있습니다.
 * 이미지 확대 시 휴대폰을 좌,우로 움직이면 파노라마 형식으로 이미지를 볼 수 있습니다.
+
+## 3. 사용 라이브러리
+* https://github.com/JakeWharton/butterknife [ButterKnife]
+* https://github.com/flavioarfaria/KenBurnsView [KenBurnView]
+* https://github.com/gjiazhe/PanoramaImageView [PanoramaImageView]
+* https://github.com/bumptech/glide [Glide]
