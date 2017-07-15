@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">GoodPlaceList</string>
+    <string name="toolBar_title">맛집리스트</string>
+
+    <string name="sorting_distance">거리순</string>
+    <string name="sorting_favorite">인기순</string>
+    <string name="sorting_recent">최근순</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
