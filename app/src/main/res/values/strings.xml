@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Boost2</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="distance">거리순</string>
+    <string name="popularity">인기순</string>
+    <string name="recent">최근순</string>
+
+    <string name="store1_name">진진반상</string>
+    <string name="store2_name">계절밥상</string>
+    <string name="store3_name">차알</string>
+    <string name="store4_name">샤이바나</string>
+    <string name="store5_name">세렌</string>
+    <string name="store6_name">붓처스컷</string>
+
+    <string name="store1_explanation">분당 판교의 대표적인 한정식 맛집</string>
+    <string name="store2_explanation">분당 판교의 계절밥상 가족식사하기 좋은곳 한식부페</string>
+    <string name="store3_explanation">분당 판교의 라스트리트 맛집 특색있는 중식요리</string>
+    <string name="store4_explanation">분당 판교의 미국스타일 브런치가 맛있는 집</string>
+    <string name="store5_explanation">분당 판교의 스테이크와 파스타가 맛있는 레스토랑</string>
+    <string name="store6_explanation">분당 판교 아브뉴프랑의 스테이크 런치부페가 맛있는 집</string>
+
+    <string name="title">맛집리스트</string>
+</resources>
