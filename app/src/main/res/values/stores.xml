@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="store_name_array">
+        <item>알촌</item>
+        <item>곱창이야기</item>
+        <item>내가찜한닭</item>
+        <item>육회공작소</item>
+        <item>스타벅스</item>
+        <item>공차</item>
+    </string-array>
+    <string-array name="store_desc_array">
+        <item>서울 성동구 마조로3길 6 / 한양대 새내기들을 위한 추천 밥집</item>
+        <item>서울 성동구 마조로5길 3 / 국내산 한우 소곱창이 유명한 곱창이야기 한양대점입니다.</item>
+        <item>서울 성동구 마조로7길 5 / 찜닭 생각날때는 내가찜한닭!</item>
+        <item>서울 성동구 마조로7길 5 한양고시원 / 이자카야, 육회, 육회비빔밥, 떡국, 소고기무국으로 유명한 술집</item>
+        <item>서울 성동구 왕십리로 225 / 커피하면 스타벅스 입니다. :)</item>
+        <item>서울 성동구 마조로 21 / 요즘 주구장창 가고있는 한양대 공차, 자몽 그린티 에이드 짱짱맨</item>
+    </string-array>
+    <integer-array name="store_image_file_array">
+        <item>@drawable/store1</item>
+        <item>@drawable/store2</item>
+        <item>@drawable/store3</item>
+        <item>@drawable/store4</item>
+        <item>@drawable/store5</item>
+        <item>@drawable/store6</item>
+    </integer-array>
+    <integer-array name="store_popularity_array">
+        <item>10</item>
+        <item>15</item>
+        <item>5</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+    </integer-array>
+    <integer-array name="store_date_array">
+        <item>20170713</item>
+        <item>20170516</item>
+        <item>20170711</item>
+        <item>20170524</item>
+        <item>20170525</item>
+        <item>20170630</item>
+    </integer-array>
+    <integer-array name="store_distance_array">
+        <item>10</item>
+        <item>25</item>
+        <item>15</item>
+        <item>30</item>
+        <item>50</item>
+        <item>20</item>
+    </integer-array>
+</resources>
