@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/restaurant_item_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="@dimen/card_radius"
+        app:cardElevation="@dimen/card_radius">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.flaviofaria.kenburnsview.KenBurnsView
+                android:id="@+id/restaurant_item_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/image_height"
+                android:adjustViewBounds="true"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/unit_dimen"
+                android:paddingLeft="@dimen/unit_dimen"
+                android:paddingRight="@dimen/unit_dimen">
+
+                <CheckBox
+                    android:id="@+id/restaurant_item_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginLeft="@dimen/half_unit_dimen"
+                    android:layout_marginStart="@dimen/half_unit_dimen"
+                    android:layout_marginBottom="@dimen/half_unit_dimen"
+                    android:button="@null"
+                    android:background="@drawable/img_check"
+                    android:clickable="false"/>
+
+                <TextView
+                    android:id="@+id/restaurant_item_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_toLeftOf="@id/restaurant_item_checkbox"
+                    android:layout_toStartOf="@id/restaurant_item_checkbox"
+                    android:layout_alignBaseline="@id/restaurant_item_checkbox"
+                    android:textColor="@android:color/primary_text_light"
+                    android:textStyle="bold"
+                    style="@style/TextAppearance.AppCompat.Title"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/restaurant_item_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/unit_dimen"
+                android:paddingRight="@dimen/unit_dimen"
+                android:paddingBottom="@dimen/unit_dimen"
+                android:layout_marginBottom="@dimen/half_unit_dimen"
+                android:textColor="@android:color/secondary_text_light"
+                style="@style/TextAppearance.AppCompat.Body1"/>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

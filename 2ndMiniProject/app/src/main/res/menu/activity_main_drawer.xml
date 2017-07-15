@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_layout_change"
+        android:icon="@android:drawable/ic_menu_gallery"
+        android:title="@string/layout_change" />
+
+    <item android:title="@string/sort_title">
+        <menu>
+            <item
+                android:id="@+id/nav_distance"
+                android:icon="@android:drawable/ic_media_pause"
+                android:title="@string/sort_distance"
+                />
+            <item
+                android:id="@+id/nav_popularity"
+                android:icon="@android:drawable/ic_menu_compass"
+                android:title="@string/sort_popularity" />
+            <item
+                android:id="@+id/nav_time"
+                android:icon="@android:drawable/ic_menu_month"
+                android:title="@string/sort_time" />
+        </menu>
+    </item>
+
+</menu>
